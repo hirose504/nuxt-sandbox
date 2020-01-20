@@ -18,6 +18,7 @@ jobs:
     - uses: nuxt/actions-yarn@master
       with:
         args: build
+    - run: cd functions && npm install
     - name: deploy
       run: yarn firebase deploy --token $FIREBASE_TOKEN
       env:
